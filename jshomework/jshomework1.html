@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let automobile = {
+        mark: "BMW",
+        model: "X3",
+        year: 2008,
+        kmPerHour: 120
+    }
+    function info (){
+        alert(automobile.mark + "\n"  + automobile.model + "\n" + automobile.year + "\n" + automobile.kmPerHour)
+    }
+    info();
+    function distance() {
+        let howMuch = +prompt("Какое расстояние необходимо преодолеть");
+        let over = howMuch / 120;
+        while ((howMuch / 120) > 4) {
+            let breaking = (howMuch / 120) / 4;
+            over += breaking;
+            break;
+        }
+        alert("Данное расстояние преодолеется за " + over + " часов")
+    }
+    distance();
+
+</script>
+</body>
+</html>
