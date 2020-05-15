@@ -48,8 +48,30 @@
 //     event.preventDefault();
 // }
 
+// document.onmousemove = function (event) {
+//     document.getElementById("rr").innerHTML = event.clientX+ " x " +event.clientY;
+//     document.getElementById("rr").style.top = event.clientY+ "px";
+//     document.getElementById("rr").style.left = event.clientX+ "px";
+// }
+
+
+
 document.onmousemove = function (event) {
-    document.getElementById("rr").innerHTML = event.clientX+ " x " +event.clientY;
-    document.getElementById("rr").style.top = event.clientY+ "px";
-    document.getElementById("rr").style.left = event.clientX+ "px";
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+
+    document.getElementById("rr").innerHTML = mouseX + " x " + mouseY;
+
+
+    if(mouseX > (window.innerWidth - 100) ){
+        setInterval((document.getElementById("rr").style.left = (mouseX - 100) + "px"), 240);
+    } else {
+        setInterval((document.getElementById("rr").style.left = mouseX + "px"), 240);
+    }
+
+    if (mouseY > (window.innerHeight - 20)) {
+        document.getElementById("rr").style.top = (mouseY - 20) + "px";
+    } else {
+        document.getElementById("rr").style.top = mouseY + "px";
+    }
 }
