@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<!--<script>-->
+<!--    let human = {-->
+<!--        name: "Ivan",-->
+<!--        surname: "Ivanov",-->
+<!--        age: 20,-->
+<!--        car: {-->
+<!--            mark: "VW",-->
+<!--            model: "polo"-->
+<!--        }-->
+<!--    }-->
+<!--    user = JSON.parse('{"name": "Вася", "age": 35, "isAdmin": false, "friends": [0,1,2,3]}');-->
+<!--    document.write(user.name + " " + user.age + " " + user.isAdmin);-->
+<!--    for (aa in user) {-->
+<!--        document.write(aa + ":" + user[aa] + "; ");-->
+<!--    }-->
+<!--</script>-->
+<!--<form method="GET">-->
+<!--    <input type="text" name="name">-->
+<!--    <input type="submit">-->
+
+<!--</form>-->
+<script>
+    // // 1. Создаём новый XMLHttpRequest-объект
+    // let xhr = new XMLHttpRequest();
+    //
+    // // 2. Настраиваем его: GET-запрос по URL /article/.../load
+    // xhr.open('GET', '/article/xmlhttprequest/example/load');
+    //
+    // // 3. Отсылаем запрос
+    // xhr.send();
+    //
+    // // 4. Этот код сработает после того, как мы получим ответ сервера
+    // xhr.onload = function() {
+    //     if (xhr.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
+    //         alert(`Ошибка ${xhr.status}: ${xhr.statusText}`); // Например, 404: Not Found
+    //     } else { // если всё прошло гладко, выводим результат
+    //         alert(`Готово, получили ${xhr.response.length} байт`); // response -- это ответ сервера
+    //     }
+    // };
+    //
+    // xhr.onprogress = function(event) {
+    //     if (event.lengthComputable) {
+    //         alert(`Получено ${event.loaded} из ${event.total} байт`);
+    //     } else {
+    //         alert(`Получено ${event.loaded} байт`); // если в ответе нет заголовка Content-Length
+    //     }
+    //
+    // };
+    //
+    // xhr.onerror = function() {
+    //     alert("Запрос не удался");
+    // };
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://www.nbrb.by/api/exrates/rates/145');
+    xhr.responseType= 'json';
+    xhr.send();
+
+    xhr.onload = function () {
+        let responseObj = xhr.response;
+        for (let cur in responseObj) {
+            document.write(cur + ": ");
+            document.write(responseObj[cur] + " ")
+        }
+    };
+    
+    // https://www.nbrb.by/apihelp/exrates/sample
+
+</script>
+</body>
+</html>

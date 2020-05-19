@@ -1,0 +1,11 @@
+{
+  "name": "Vasia",
+  "surname": "Vasin",
+  "age": 30,
+  "isActive": true,
+  "car": {
+    "mark": "Audi",
+    "model": "TT",
+    "year": 2016
+  }
+}
