@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrapper {
+            width: 800px; height: 400px; background: antiquewhite; display: flex; justify-content: space-around;
+        }
+        .divImages {
+            width: 600px; height: 400px;
+        }
+        .arrowLeft, .arrowRight {
+            width: 30px; height: 20px;
+        }
+        button{
+            border: none; background: antiquewhite;
+        }
+        .images {
+            width: 600px; height: 400px; display: none;
+        }
+        .active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <button class="btn1"><img class="arrowLeft" src="arleft.png"></button>
+    <div class="divImages">
+        <img class="images1 images active" src="1.jpg">
+        <img class="images2 images" src="2.jpg">
+        <img class="images3 images" src="3.jpg">
+    </div>
+    <button class="btn2"><img class="arrowRight" src="arright.png"></button>
+</div>
+<script src="script2.js">
+</script>
+</body>
+</html>
